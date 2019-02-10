@@ -1,0 +1,15 @@
+
+<div class="contents row">
+  <div class="container col-8 mx-auto">
+  <%= form_tag("/posts", class: "card col-8 mx-auto border-warning my-3", method: :post, multipart: true) do %>
+    <h3>
+      投稿する
+    </h3>
+        ▼料理写真を選択
+        <input type="file" name="image">
+        <textarea name="title" placeholder="レシピ名" rows="1" cols="30"></textarea>
+        <textarea name="content" placeholder="決め手" rows="10" cols="30"></textarea>
+        <input type="submit" value="送信">
+  <% end %>
+  </div>
+</div>

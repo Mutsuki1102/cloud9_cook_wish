@@ -1,0 +1,11 @@
+  <p class = "text-center"><%= @nickname %>さんの投稿一覧</p>
+    <% @posts.each do |post|%>
+    <div class="card col-8 mx-auto border-warning my-3">
+      <%= image_tag post.image.thumb.url %>
+      <div class="card-body">
+        <h5 class="card-title"><%= post.title %> BY <%= post.user.nickname %></h5>
+        <p class="card-text"><%= post.content %></p>
+        <%= link_to "詳細", post_path(post.id), method: :get, class: 'btn btn-warning' %></li>
+      </div>
+    </div>
+    <% end %>

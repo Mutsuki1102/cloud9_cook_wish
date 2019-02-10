@@ -1,0 +1,12 @@
+<div class="contents row">
+  <div class="container col-8 mx-auto">
+  <%= form_tag("/posts/#{@post.id}", class: "card col-8 mx-auto border-warning my-3", method: :patch) do %>
+    <h3>
+      編集する
+    </h3>
+    <textarea name="title" placeholder="レシピ名" rows="1" cols="30"><%= @post.title %></textarea>
+    <textarea name="content" placeholder="決め手" rows="10" cols="30"><%= @post.content %></textarea>
+    <input type="submit" value="送信">
+  <% end %>
+  </div>
+</div>
