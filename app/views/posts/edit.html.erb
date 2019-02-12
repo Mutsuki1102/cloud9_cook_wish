@@ -1,6 +1,6 @@
   <div class="container">
     <div class="contents row col-8 mx-auto">
-      <%= form_tag("/posts/#{@post.id}", class: "card col-8 mx-auto border-warning my-3", method: :patch) do %>
+      <%= form_tag("/posts/#{@post.id}", class: "card col-8 mx-auto border-warning my-3", method: :patch, multipart: true) do %>
         <div class="row mx-auto my-2">
           <h3>
             編集する
