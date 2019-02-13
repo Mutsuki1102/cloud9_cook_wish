@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: cook_wish_production
-  username: cook_wish
+  database: heroku_011cc4c0c30ac9a
+  username: bab39abf8cbdb6
   password: <%= ENV['COOK_WISH_DATABASE_PASSWORD'] %>
