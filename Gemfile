@@ -75,3 +75,8 @@ gem 'mini_magick'
 gem 'fog-aws'
 gem 'dotenv-rails'
 gem 'pry-byebug'
+
+
+group :production do
+  gem 'rails_12factor'
+end
