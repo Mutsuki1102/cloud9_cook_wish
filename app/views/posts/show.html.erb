@@ -1,5 +1,5 @@
-<div class="card col-8 mx-auto border-warning my-3">
-  <%= image_tag @post.image.thumb.url, :style => "padding-top: 15px" %>
+<div class="card col-sm-12 col-md-10 col-lg-8 mx-auto border-warning my-3">
+  <%= image_tag @post.image.thumb.url, :style => "padding-top: 15px", :class => "rounded img-fluid" %>
   <div class="card-body">
     <h5 class="card-title"><%= @post.title %> BY <%= @post.user.nickname %></h5>
     <p class="card-text"><%= @post.content %></p>

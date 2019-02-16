@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="contents row col-8 mx-auto">
-    <%= form_tag("/posts", class: "card col-8 mx-auto border-warning my-3", method: :post, multipart: true) do %>
+  <div class="contents row col-sm-12 col-md-10 col-lg-8 mx-auto">
+    <%= form_tag("/posts", class: "card col-sm-12 col-md-12 col-lg-8 mx-auto border-warning my-3", method: :post, multipart: true) do %>
       <div class="row mx-auto my-2">
         <h3>
           投稿する
@@ -12,7 +12,7 @@
         </div>
         <div class="custom-file">
           <input type="file" class="custom-file-input" id="inputGroupFile01" name="image">
-          <label class="custom-file-label" for="inputGroupFile01">ファイルを選択</label>
+          <label class="custom-file-label" for="inputGroupFile01">ファイル選択</label>
         </div>
       </div>
       <div class="input-group mb-3">
