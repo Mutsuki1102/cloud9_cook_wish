@@ -17,10 +17,10 @@
 
 .jumbotron {
 	background-image: image-url('curry.jpg');
-	-webkit-background-size: cover;
 	background-position: center;
   background-repeat: no-repeat;
   width: 100%;
+  -webkit-background-size: cover;
 }
 
 .bg-mask {
