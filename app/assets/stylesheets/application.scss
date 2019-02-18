@@ -19,6 +19,7 @@
 	background-image: image-url('curry.jpg');
 	background-size: cover;
 	background-position: center;
+  background-repeat: no-repeat;
 }
 
 .bg-mask {
@@ -27,6 +28,3 @@
   width: 100%;
 }
 
-.frontContents {
-  	color: #000;
-}
