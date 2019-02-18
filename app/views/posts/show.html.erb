@@ -1,11 +1,13 @@
-<div class="card col-sm-12 col-md-10 col-lg-8 mx-auto border-warning my-3">
-  <%= image_tag @post.image.thumb.url, :style => "padding-top: 15px", :class => "rounded img-fluid" %>
-  <div class="card-body">
-    <h5 class="card-title"><%= @post.title %> BY <%= @post.user.nickname %></h5>
-    <p class="card-text"><%= @post.content %></p>
-    <% if user_signed_in? && current_user.id == @post.user_id %>
-      <%= link_to "編集", edit_post_path(@post.id), method: :get, class: 'btn btn-warning text-white' %></li>
-      <%= link_to "削除", "/posts/#{@post.id}", method: :delete, class: 'btn btn-warning text-white' %></li>
-    <% end %>
+<div class="container">
+  <div class="card col-xs-10 col-sm-10 col-md-10 col-lg-8 mx-auto border-warning my-3 mt-5">
+    <%= image_tag @post.image.thumb.url, :style => "padding-top: 15px", :class => "rounded img-fluid" %>
+    <div class="card-body">
+      <h5 class="card-title"><%= @post.title %> BY <%= @post.user.nickname %></h5>
+      <p class="card-text"><%= @post.content %></p>
+      <% if user_signed_in? && current_user.id == @post.user_id %>
+        <%= link_to "編集", edit_post_path(@post.id), method: :get, class: 'btn btn-warning text-white' %></li>
+        <%= link_to "削除", "/posts/#{@post.id}", method: :delete, class: 'btn btn-warning text-white' %></li>
+      <% end %>
+    </div>
   </div>
 </div>

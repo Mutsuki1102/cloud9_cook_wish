@@ -1,6 +1,9 @@
 class PostsController < ApplicationController
   
-  before_action :move_to_index, except: [:index, :show]
+  before_action :move_to_index, except: [:index, :show, :lp]
+
+  def lp
+  end
   
   def index
     @posts = Post.includes(:user).order('id DESC').limit(20)
@@ -11,7 +14,7 @@ class PostsController < ApplicationController
   
   def create
     Post.create(title: post_params[:title], content: post_params[:content], user_id: current_user.id, image: post_params[:image])
-    redirect_to("/")
+    redirect_to("/posts/index")
   end
   
   def show
@@ -33,7 +36,7 @@ class PostsController < ApplicationController
   def destroy
     post = Post.find(params[:id])
     post.destroy if post.user_id == current_user.id
-    redirect_to("/")
+    redirect_to("/posts/index")
   end
   
   private
