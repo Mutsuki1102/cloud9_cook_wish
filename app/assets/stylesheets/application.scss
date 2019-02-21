@@ -12,9 +12,16 @@
 
  */
  
+/*
+ *= require simple_calendar
+ */
+ 
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 
+
+
+// lp関連
 .jumbotron {
 	background-image: image-url('curry.jpg');
 	background-position: center;
@@ -29,3 +36,61 @@
   width: 100%;
 }
 
+// simple_calendar
+
+.simple-calendar {
+  .table-strip {
+  width: 100%;
+  }
+  
+  .day {
+    height: 70px;
+  }
+  .wday-0 {}
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {}
+
+  .today {}
+  .past {}
+  .future {}
+
+  .start-date {}
+
+  .prev-month {
+    background: #DDD;
+  }
+  .next-month {
+    background: #DDD;
+  }
+  .current-month {}
+
+  .has-events {}
+  
+  th {
+    font-size: calc(100vw / 60);
+    padding: 6px;
+    border-bottom: 2px solid rgb(221, 221, 221);
+    border-collapse: collapse;
+    border-left: 1px solid rgb(221, 221, 221);
+    border-right: 1px solid rgb(221, 221, 221);
+    border-top: 0px none rgb(51, 51, 51);
+    box-sizing: border-box;
+    text-align: center;
+  }
+  
+  td {
+    font-size: calc(70vw / 60);
+    text-align: center
+  }
+  .table td {
+  padding: 0.3rem;
+  }
+  .btn-sm {
+    padding: calc(40vw / 1100);
+    font-size: calc(70vw / 60);
+  }
+}

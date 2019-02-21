@@ -9,6 +9,10 @@ class PostsController < ApplicationController
     @posts = Post.includes(:user).order('id DESC').limit(20)
   end
   
+  def calendar
+    @posts = Post.includes(:user).order('id DESC').limit(20)
+  end
+  
   def new
   end
   
