@@ -4,6 +4,7 @@
     <div class="card-body">
       <h5 class="card-title"><%= @post.title %> BY <%= @post.user.nickname %></h5>
       <p class="card-text"><%= @post.content %></p>
+      <p class="card-text"><%= @post.start_time.strftime('%Y-%m-%d') %></p>
       <% if user_signed_in? && current_user.id == @post.user_id %>
         <%= link_to "編集", edit_post_path(@post.id), method: :get, class: 'btn btn-warning text-white' %></li>
         <%= link_to "削除", "/posts/#{@post.id}", method: :delete, class: 'btn btn-warning text-white' %></li>

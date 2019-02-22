@@ -9,11 +9,15 @@ class PostsController < ApplicationController
     @posts = Post.includes(:user).order('id DESC').limit(20)
   end
   
+  def calendar
+    @posts = Post.includes(:user).where(user: current_user).order('id DESC').limit(20)
+  end
+  
   def new
   end
   
   def create
-    Post.create(title: post_params[:title], content: post_params[:content], user_id: current_user.id, image: post_params[:image])
+    Post.create(title: post_params[:title], content: post_params[:content], user_id: current_user.id, image: post_params[:image], start_time: post_params[:start_time])
     redirect_to("/posts/index")
   end
   
@@ -41,7 +45,7 @@ class PostsController < ApplicationController
   
   private
   def post_params
-    params.permit(:title, :content, :image)
+    params.permit(:title, :content, :image, :start_time)
   end
   
   def move_to_index

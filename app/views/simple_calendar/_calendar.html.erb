@@ -1,0 +1,8 @@
+<%= month_calendar events: @posts do |date, posts| %>
+  <%= date %>
+  <% posts.each do |post| %>
+    <div>
+      <%= link_to post.title.truncate(6), post_path(post.id), method: :get, class: "btn btn-warning text-white btn-sm" %>
+    </div>
+  <% end %>
+<% end %>

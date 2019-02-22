@@ -21,11 +21,17 @@
         </div>
         <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="title" value="<%= @post.title%>">
       </div>
-      <div class="input-group">
+      <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text">決め手</span>
         </div>
         <textarea class="form-control" aria-label="With textarea" name="content"><%= @post.content %></textarea>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">食べた日</span>
+        </div>
+        <input type="date" name="start_time" min="2018-01-01" max="2022-12-31" class="bg-white" value="<% @post.start_time.strftime('%Y-%m-%d') %>"></p>
       </div>
       <div class="row mx-1 my-3">
         <button type="submit" class="btn btn-warning btn-lg btn-block text-white" value="送信">更新</button>
