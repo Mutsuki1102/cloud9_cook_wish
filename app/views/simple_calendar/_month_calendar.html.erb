@@ -1,8 +1,8 @@
 <div class="simple-calendar mx-auto my-3 xs-col-10">
   <div class="calendar-heading">
-    <%= link_to t('simple_calendar.previous', default: '◀︎◀︎'), calendar.url_for_previous_view %>
+    <%= link_to t('simple_calendar.previous', default: '◀︎◀︎'), calendar.url_for_previous_view, {:class=>"text-warning"} %>
     <span class="calendar-title"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
-    <%= link_to t('simple_calendar.next', default: '▶︎▶︎'), calendar.url_for_next_view %>
+    <%= link_to t('simple_calendar.next', default: '▶︎▶︎'), calendar.url_for_next_view, {:class=>"text-warning"} %>
   </div>
 
   <table class="table table-striped">
