@@ -1,3 +1,10 @@
 <div id="events_calendar" class="col-xs-10 col-sm-10 col-md-10 col-lg-8 mx-auto my-3">
-  <%= render partial: "simple_calendar/calendar", locals: {posts: @posts} %>
+  <%= month_calendar events: @posts do |date, posts| %>
+    <%= date.day %>
+    <% posts.each do |post| %>
+      <div>
+        <%= link_to post.title.truncate(6), post_path(post.id), method: :get, class: "btn btn-warning text-white btn-sm" %>
+      </div>
+    <% end %>
+  <% end %>
 </div>
