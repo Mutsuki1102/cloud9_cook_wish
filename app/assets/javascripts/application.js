@@ -18,14 +18,3 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
-
-<script>
-$(function(){
-    //Default
-    $('#datepicker-default .date').datepicker({
-        format: "yyyy年mm月dd日",
-        language: 'ja'
-    });
-     
-});
-</script>
