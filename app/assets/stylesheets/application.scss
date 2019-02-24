@@ -44,7 +44,7 @@
   }
   
   .day {
-    height: calc(5vw + 60px);
+    height: 70px;
   }
   .wday-0 {}
   .wday-1 {}
@@ -83,7 +83,7 @@
   }
   
   td {
-    font-size: calc(1vw + 5px);
+    font-size: calc(70vw / 60);
     text-align: center
   }
   .table td {
@@ -91,5 +91,6 @@
   }
   .btn-sm {
     padding: calc(40vw / 1100);
+    font-size: calc(70vw / 60);
   }
 }
