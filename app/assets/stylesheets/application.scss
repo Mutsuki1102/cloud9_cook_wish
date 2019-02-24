@@ -44,7 +44,7 @@
   }
   
   .day {
-    height: 70px;
+    height: calc(5vw + 60px);
   }
   .wday-0 {}
   .wday-1 {}
@@ -91,6 +91,6 @@
   }
   .btn-sm {
     padding: calc(40vw / 1100);
-    font-size: calc(70vw / 60);
+    font-size: calc(1vw + 5px);
   }
 }
