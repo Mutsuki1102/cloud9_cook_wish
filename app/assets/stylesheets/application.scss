@@ -83,7 +83,7 @@
   }
   
   td {
-    font-size: calc(70vw / 60);
+    font-size: calc(1vw + 5px);
     text-align: center
   }
   .table td {
@@ -91,6 +91,5 @@
   }
   .btn-sm {
     padding: calc(40vw / 1100);
-    font-size: calc(1vw + 5px);
   }
 }
