@@ -3,7 +3,7 @@
     <%= date.day %>
     <% posts.each do |post| %>
       <div>
-        <%= link_to post.title.truncate(6), post_path(post.id), method: :get, class: "btn btn-warning text-white btn-sm" %>
+        <%= link_to post.title.truncate(4, omission: ""), post_path(post.id), method: :get, class: "btn btn-warning text-white btn-sm" %>
       </div>
     <% end %>
   <% end %>
