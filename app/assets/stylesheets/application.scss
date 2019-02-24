@@ -36,6 +36,11 @@
   width: 100%;
 }
 
+.custom-file-label::after {
+  display: none;
+}
+
+
 // simple_calendar
 
 .simple-calendar {

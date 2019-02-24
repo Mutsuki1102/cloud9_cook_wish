@@ -8,11 +8,11 @@
       </div>
         <div class="input-group mb-3">
         <div class="input-group-prepend">
-          <span class="input-group-text">写真</span>
+          <span class="input-group-text">写真　</span>
         </div>
         <div class="custom-file">
           <input type="file" class="custom-file-input" id="inputGroupFile01" name="image">
-          <label class="custom-file-label" for="inputGroupFile01">ファイル選択</label>
+          <label class="custom-file-label" for="inputGroupFile01">ファイルを選択する</label>
         </div>
       </div>
       <div class="input-group mb-3">
@@ -29,9 +29,10 @@
       </div>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
-          <span class="input-group-text">食べた日</span>
+          <span class="input-group-text">日程　</span>
         </div>
-        <input type="date" name="start_time" min="2018-01-01" max="2022-12-31" class="bg-white" value="<% @post.start_time.strftime('%Y-%m-%d') %>"></p>
+        <% binding.pry %>
+        <input type="date" name="start_time" min="2018-01-01" max="2022-12-31" class="bg-white" value="<% @post.start_time.strftime('%Y-%m-%d') %>">
       </div>
       <div class="row mx-1 my-3">
         <button type="submit" class="btn btn-warning btn-lg btn-block text-white" value="送信">更新</button>
