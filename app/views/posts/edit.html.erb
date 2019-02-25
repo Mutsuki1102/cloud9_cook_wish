@@ -31,8 +31,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text">日程　</span>
         </div>
-        <% binding.pry %>
-        <input type="date" name="start_time" min="2018-01-01" max="2022-12-31" class="bg-white" value="<% @post.start_time.strftime('%Y-%m-%d') %>">
+        <input type="date" name="start_time" min="2018-01-01" max="2022-12-31" class="bg-white" value="<%= @post.start_time.strftime("%Y-%m-%d") %>">
       </div>
       <div class="row mx-1 my-3">
         <button type="submit" class="btn btn-warning btn-lg btn-block text-white" value="送信">更新</button>
@@ -40,3 +39,4 @@
     <% end %>
 </div>
 </div>
+
