@@ -85,3 +85,4 @@ end
 
 gem "aws-sdk-s3", require: false
 gem "simple_calendar", "~> 2.0"
+gem 'counter_culture', '~> 1.8'
