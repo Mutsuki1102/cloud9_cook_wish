@@ -51,6 +51,9 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'pry-doc'
 end
 
 group :test do
@@ -76,7 +79,6 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
 gem 'dotenv-rails'
-gem 'pry-byebug'
 
 
 group :production do
