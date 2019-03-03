@@ -61,5 +61,6 @@ Rails.application.configure do
   
   config.web_console.development_only = false
   config.assets.compile = true
-  
+  config.web_console.whitelisted_ips = '0.0.0.0/0'
+
 end

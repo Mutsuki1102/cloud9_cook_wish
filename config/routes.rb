@@ -7,5 +7,8 @@ Rails.application.routes.draw do
   resources :posts, only: [:show, :edit, :destroy, :create, :new, :update]
   resources :users, only: [:show]
 
+  post   '/like/:post_id', to: 'likes#like',   as: :like
+  delete '/like/:post_id', to: 'likes#unlike', as: :unlike
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
