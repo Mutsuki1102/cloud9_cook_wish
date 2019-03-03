@@ -6,18 +6,18 @@ class Post < ApplicationRecord
   validates :start_time , presence: true
   has_many :likes, dependent: :destroy
 
-  def iiyome(user)
+  def like(user)
     likes.create(user_id: user.id)
   end
 
-  def uniiyome(user)
+  def unlike(user)
     likes.find_by(user_id: user.id).destroy
   end
 
-  has_many :iiyome_users, through: :likes, source: :user
+  has_many :like_users, through: :likes, source: :user
 
-  def iiyome?(user)
-    iiyome_users.include?(user)
+  def like?(user)
+    like_users.include?(user)
   end
 
 end

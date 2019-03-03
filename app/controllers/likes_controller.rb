@@ -3,8 +3,8 @@ class LikesController < ApplicationController
  
   def create
     @post = Post.find(params[:post_id])
-    unless @post.iiyome?(current_user)
-    @post.iiyome(current_user)
+    unless @post.like?(current_user)
+    @post.like(current_user)
     @post.reload
       respond_to do |format|
         format.html { redirect_to request.referrer || root_url }
@@ -15,8 +15,8 @@ class LikesController < ApplicationController
 
   def destroy
     @post = Like.find(params[:id]).post
-    if @post.iiyome?(current_user)
-      @post.uniiyome(current_user)
+    if @post.unlike(current_user)
+      @post.unlike(current_user)
       @post.reload
       respond_to do |format|
         format.html { redirect_to request.referrer || root_url }
