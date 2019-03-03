@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   get '/posts/calendar', to: 'posts#calendar'
   resources :posts, only: [:show, :edit, :destroy, :create, :new, :update]
   resources :users, only: [:show]
-  resources :likes, only: [:create, :destroy]
+
+  post   '/like/:post_id', to: 'likes#like',   as: :like
+  delete '/like/:post_id', to: 'likes#unlike', as: :unlike
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

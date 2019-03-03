@@ -1,11 +1,11 @@
 class LikesController < ApplicationController
   before_action :user_signed_in?
- 
-  def create
+
+  def like
     @post = Post.find(params[:post_id])
-    unless @post.like?(current_user)
-    @post.like(current_user)
-    @post.reload
+
+    unless @post.iiyome?(current_user)
+      @post.iiyome(current_user)
       respond_to do |format|
         format.html { redirect_to request.referrer || root_url }
         format.js
@@ -13,11 +13,11 @@ class LikesController < ApplicationController
     end
   end
 
-  def destroy
-    @post = Like.find(params[:id]).post
-    if @post.unlike(current_user)
-      @post.unlike(current_user)
-      @post.reload
+  def unlike
+    @post = Post.find(params[:post_id])
+
+    if @post.iiyome?(current_user)
+      @post.uniiyome(current_user)
       respond_to do |format|
         format.html { redirect_to request.referrer || root_url }
         format.js

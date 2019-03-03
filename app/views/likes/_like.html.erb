@@ -1,16 +1,5 @@
-  <span class="like">
-    <% if post.like?(current_user) %>
-      <%= form_for(post.likes.find_by(user_id: current_user.id), method: :delete, remote: true) do |f| %>
-        <%= button_tag(class: "btn btn-outline-warning btn-xs mx-4") do %>
-          <%= content_tag :span, "イイ嫁 #{post.likes_count}", class: "glyphicon glyphicon-heart" %>
-        <% end %>
-      <% end %>
-    <% else %>
-      <%= form_for(post.likes.build, remote: true) do |f| %>
-        <div><%= hidden_field_tag :post_id, post.id %></div>
-        <%= button_tag(class: "btn btn-outline-warning btn-xs mx-4") do %>
-          <%= content_tag :span, "イイ嫁 #{post.likes_count}", class: "glyphicon glyphicon-heart-empty" %>
-        <% end %>
-      <% end %>
-    <% end %>
-  </span>
+<% if !post.iiyome?(current_user) %>
+  <%= link_to "いい嫁 #{post.likes.count}", like_path(post.id), method: :post, class: 'btn btn-warning text-white mx-3', remote: true %>
+<% else %>
+  <%= link_to "いい嫁 #{post.likes.count}", unlike_path(post.id), method: :delete, class: 'btn btn-warning text-white mx-3', remote: true %>
+<% end %>
