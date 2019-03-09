@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   root to: "posts#lp"
   get '/posts/index', to: 'posts#index'
   get '/posts/calendar', to: 'posts#calendar'
-  resources :posts, only: [:show, :edit, :destroy, :create, :new, :update]
+  resources :posts, only: [:show, :edit, :destroy, :create, :new, :update] do
+    collection do
+      get 'search'
+    end
+  end
   resources :users, only: [:show]
 
   post   '/like/:post_id', to: 'likes#like',   as: :like

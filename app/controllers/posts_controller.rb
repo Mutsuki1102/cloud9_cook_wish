@@ -42,6 +42,10 @@ class PostsController < ApplicationController
     post.destroy if post.user_id == current_user.id
     redirect_to("/posts/index")
   end
+
+  def search
+    @posts = Post.where('title Like(?)', "%#{params[:keyword]}%").limit(20)
+  end
   
   private
   def post_params
@@ -51,5 +55,6 @@ class PostsController < ApplicationController
   def move_to_index
     redirect_to action: :index unless user_signed_in?
   end
+
 
 end
