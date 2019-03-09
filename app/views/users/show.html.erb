@@ -6,7 +6,12 @@
       <div class="card-body">
         <h5 class="card-title"><%= post.title %> BY <%= post.user.nickname %></h5>
         <p class="card-text"><%= post.content %></p>
-        <%= link_to "詳細", post_path(post.id), method: :get, class: 'btn btn-warning text-white' %>
+        <div class="row row-fluid">
+          <%= link_to "詳細", post_path(post.id), method: :get, class: 'btn btn-warning text-white' %>
+          <%= content_tag :div, id: "post-#{post.id}-like" do %>
+            <%= render "likes/like", post: post %>
+          <% end %>
+        </div>  
       </div>
     </div>
   </div>
