@@ -17,7 +17,7 @@ class Post < ApplicationRecord
   has_many :iiyome_users, through: :likes, source: :user
 
   def iiyome?(user)
-    like_users.include?(user)
+    iiyome_users.include?(user)
   end
 
 end
