@@ -9,8 +9,12 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
-  resources :users, only: [:show]
-
+  resources :users, only: [:show] do
+    member do
+      get 'search'
+    end
+  end
+  
   post   '/like/:post_id', to: 'likes#like',   as: :like
   delete '/like/:post_id', to: 'likes#unlike', as: :unlike
 
