@@ -1,22 +1,23 @@
 <p class = "text-center mt-5"><%= @nickname %>さんの投稿一覧</p>
-<%= form_tag(search_user_path, class: "col-xs-10 col-sm-10 col-md-8 col-lg-7 mx-auto border-warning my-3 mt-5 form-inline", method: :get) do %>
+<%= form_tag('/posts/search', class: "col-xs-10 col-sm-10 col-md-8 col-lg-7 mx-auto border-warning my-3 mt-5 form-inline", method: :get) do %>
   <input class="search__query col-10 form-control-sm" name="keyword" placeholder="料理名で検索" type="text" value="">
     <button class="btn-sm btn-warning text-white" title="検索" type="submit">検索</button>
   </input>
 <% end %>
 <% @posts.each do |post|%>
   <div class="container">
-    <div class="card col-xs-10 col-sm-10 col-md-10 col-lg-8 mx-auto border-warning my-3">
+    <div class="card col-xs-10 col-sm-10 col-md-10 col-lg-8 mx-auto border-warning my-3 mt-5">
       <%= image_tag post.image.thumb.url, :style => "padding-top: 15px", :class => "rounded img-fluid" %>
       <div class="card-body">
         <h5 class="card-title"><%= post.title %> BY <%= post.user.nickname %></h5>
         <p class="card-text"><%= post.content %></p>
+        <p class="card-text my-3 "><%= post.start_time.strftime('%Y-%m-%d') %></p>
         <div class="row row-fluid">
           <%= link_to "詳細", post_path(post.id), method: :get, class: 'btn btn-warning text-white' %>
           <%= content_tag :div, id: "post-#{post.id}-like" do %>
             <%= render "likes/like", post: post %>
           <% end %>
-        </div>  
+        </div>
       </div>
     </div>
   </div>
