@@ -20,9 +20,17 @@
 @import "bootstrap";
 
 
+// フォントファミリー
+@font-face {
+  font-family: 'genjyuugothic';
+  src: font-url('GenJyuuGothic-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 // lp関連
 .jumbotron {
+  font-family: 'genjyuugothic';
 	background-image: image-url('curry.jpg');
 	background-position: center;
   background-repeat: no-repeat;
@@ -30,11 +38,15 @@
   -webkit-background-size: cover;
 }
 
-.bg-mask {
-  background: rgba(255,255,255,0.5);
-  background-size: cover;
-  width: 100%;
+.container {
+  font-family: 'genjyuugothic';
 }
+
+// .bg-mask {
+//   background: rgba(255,255,255,0.5);
+//   background-size: cover;
+//   width: 100%;
+// }
 
 .custom-file-label::after {
   display: none;
@@ -100,3 +112,4 @@
     width: 100%;
   }
 }
+

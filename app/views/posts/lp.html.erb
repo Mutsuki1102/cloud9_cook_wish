@@ -1,7 +1,7 @@
 <body>
   <main role="main">
 		<section class="jumbotron text-center">
-				<div class="bg-mask col-xs-10 col-sm-8 col-md-6 col-lg-6 mx-auto">
+				<div class="col-xs-10 col-sm-8 col-md-6 col-lg-6 mx-auto">
 					<div class="frontContents">
 						<h1 class="display-4">Cook Wish</h1>
 						<p class="lead mt-4">「今日何食べたい？」に<br>即レスするための料理ブック</p>
@@ -20,7 +20,7 @@
 		<hr class="featurette-divider mt-5">
 		<div class="row featurette">
 			<div class="col-md-7 my-auto">
-				<h3 class="featurette-heading">あなたは今までに食べた<br>嫁の手料理を覚えているだろうか？</h3>
+				<h3 class="featurette-heading">今までに食べた<br>嫁の料理を覚えているだろうか？</h3>
 			</div>
 			<div class="col-md-5">
 				<%= image_tag 'Nikujaga.jpg', :class => "bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" %>
@@ -47,7 +47,26 @@
 		<section class="text-center">
 			<div class="container">
 				<h1 class="jumbotron-heading">悩めるあなたにCook Wish</h1>
-				<p class="lead text-muted">使い方はカンタン<br>嫁の手料理を撮って記録するだけ</p>
+				<p class="lead text-muted mt-5">3つの機能で<br>今日の献立をリクエスト！</p>
+
+
+				<div class="row mt-5">
+					<div class="col-lg-4">
+						<%= image_tag 'camera.jpg', :width => "140", :height => "140", :class => "bd-placeholder-img" %>
+						<h2>手料理投稿</h2>
+						<p>嫁の料理を写真に撮って投稿！<br>手料理が記録できます。</p>
+					</div><!-- /.col-lg-4 -->
+					<div class="col-lg-4">
+						<%= image_tag 'schedule.jpg', :width => "140", :height => "140", :class => "bd-placeholder-img" %>
+						<h2>カレンダー</h2>
+						<p>いつ何を食べたか一目瞭然！<br>適切なタイミングで嫁にリクエスト！</p>
+					</div><!-- /.col-lg-4 -->
+					<div class="col-lg-4">
+						<%= image_tag 'iine.jpg', :width => "140", :height => "140", :class => "bd-placeholder-img" %>
+						<h2>イイ嫁機能</h2>
+						<p>隣の食卓を覗けます。<br>素敵な献立を「イイ嫁」ボタンで記録</p>
+					</div><!-- /.col-lg-4 -->
+				</div><!-- /.row -->
 				<p>
 		      <% if user_signed_in? %>
 					<a class="btn btn-warning text-white btn-lg m-3" href="posts/index" role="button">投稿一覧</a>
